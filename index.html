@@ -134,6 +134,48 @@
                 display: block;
             }
         }
+
+        /* Guide specific styles */
+        .guide-section-card {
+            background-color: #fff;
+            border: 1px solid #E07A5F;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .guide-section-card h3 {
+            color: #E07A5F;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .guide-section-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .guide-section-card li {
+            background-color: #FDFBF7;
+            border-left: 4px solid #81B29A;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .guide-section-card li:last-child {
+            margin-bottom: 0;
+        }
+        .guide-section-card li strong {
+            color: #3D405B;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .guide-section-card li span {
+            color: #6B7280;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -142,13 +184,15 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl md:text-2xl font-bold text-[#3D405B]">细节决定体验</h1>
             <div class="hidden md:flex space-x-4" role="tablist">
-                <button id="tab-concepts" class="tab-button active" role="tab" aria-controls="panel-concepts" aria-selected="true">核心理念</button>
+                <button id="tab-introduction" class="tab-button active" role="tab" aria-controls="panel-introduction" aria-selected="true">导读</button>
+                <button id="tab-concepts" class="tab-button" role="tab" aria-controls="panel-concepts" aria-selected="false">核心理念</button>
                 <button id="tab-culture" class="tab-button" role="tab" aria-controls="panel-culture" aria-selected="false">文化构建</button>
                 <button id="tab-journey" class="tab-button" role="tab" aria-controls="panel-journey" aria-selected="false">旅程设计</button>
                 <button id="tab-measure" class="tab-button" role="tab" aria-controls="panel-measure" aria-selected="false">衡量改进</button>
             </div>
             <div class="md:hidden">
                  <select id="mobile-tab-nav" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#E07A5F] focus:border-[#E07A5F] block w-full p-2.5">
+                    <option value="introduction">导读</option>
                     <option value="concepts">核心理念</option>
                     <option value="culture">文化构建</option>
                     <option value="journey">旅程设计</option>
@@ -159,9 +203,137 @@
     </header>
 
     <main class="container mx-auto px-6 py-12 flex">
+
+        <!-- 导读 Tab Content -->
+        <div id="panel-introduction" class="tab-content active">
+            <!-- Removed sidebar as it's a single overview page -->
+            <div class="main-content-area w-full">
+                <div id="introduction-overview" class="content-section active">
+                    <h2 class="text-3xl font-bold mb-6 text-[#E07A5F] border-b-2 border-[#E07A5F] pb-2">学习指引：快速了解《细节决定体验》</h2>
+                    <p class="text-gray-700 mb-8 leading-relaxed">
+                        本交互式学习应用旨在帮助您系统地理解并掌握约翰·古德曼所著《细节决定体验》一书中的核心概念和实践方法。
+                        通过以下四大模块及其子模块的摘要，您可以快速把握本书的学习逻辑和主要内容。
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- 核心理念 Section -->
+                        <div class="guide-section-card">
+                            <h3>核心理念</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <strong>传统服务 vs 现代体验：</strong>
+                                    <span>区分传统客户服务（被动、问题导向）与现代客户体验（主动、全流程、情感连接），强调“体验为王”的新范式。</span>
+                                </li>
+                                <li>
+                                    <strong>技术是双刃剑：</strong>
+                                    <span>探讨技术在提升效率和个性化方面的机遇，同时指出其可能带来的复杂性、人情味缺失及数据隐私挑战。</span>
+                                </li>
+                                <li>
+                                    <strong>细节与执行力：</strong>
+                                    <span>强调卓越体验源于对微小细节的完美执行，以及将宏大战略转化为现实的关键在于强大的执行力。</span>
+                                </li>
+                                <li>
+                                    <strong>以客户为中心：基石与实践：</strong>
+                                    <span>阐述“以客户为中心”作为企业核心哲学的内涵，包括深入理解客户、全员参与、价值创造和持续反馈。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 文化构建 Section -->
+                        <div class="guide-section-card">
+                            <h3>文化构建</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <strong>领导层支持：</strong>
+                                    <span>强调高层领导对客户体验战略的至关重要性，包括资源分配、文化塑造和打破部门壁垒。</span>
+                                </li>
+                                <li>
+                                    <strong>一线员工赋能：</strong>
+                                    <span>论述通过培训、授权和支持，使一线员工具备快速解决问题能力，成为品牌大使的重要性。</span>
+                                </li>
+                                <li>
+                                    <strong>跨部门协作：</strong>
+                                    <span>探讨如何建立共享目标和衡量指标，促进各部门协同，提供无缝一致的端到端客户体验。</span>
+                                </li>
+                                <li>
+                                    <strong>招聘与培训：构建卓越体验团队：</strong>
+                                    <span>关注招聘具备同理心和积极服务态度的员工，并提供持续培训以提升其客户体验能力。</span>
+                                </li>
+                                <li>
+                                    <strong>员工体验：客户体验的基石：</strong>
+                                    <span>阐明满意的员工是卓越客户体验的基础，并通过提升员工体验来正向影响客户体验。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 旅程设计 Section -->
+                        <div class="guide-section-card">
+                            <h3>旅程设计</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <strong>客户旅程与情绪曲线：</strong>
+                                    <span>介绍客户旅程图作为可视化工具，及其如何描绘客户与企业的互动过程和情绪波动，识别痛点。</span>
+                                </li>
+                                <li>
+                                    <strong>投诉处理流程：化危机为转机：</strong>
+                                    <span>阐述投诉作为改进机会的价值，以及如何通过规范的流程化解危机，利用“服务恢复悖论”提升满意度。</span>
+                                </li>
+                                <li>
+                                    <strong>识别痛点与优化接触点：</strong>
+                                    <span>讲解多种识别客户痛点的方法，并提供简化、个性化、情感连接等优化客户接触点的策略。</span>
+                                </li>
+                                <li>
+                                    <strong>主动式与被动式客户体验：</strong>
+                                    <span>区分两种客户体验策略，强调主动预判和干预的重要性，以提升客户满意度和忠诚度。</span>
+                                </li>
+                                <li>
+                                    <strong>客户旅程编排实践：</strong>
+                                    <span>介绍如何通过自动化和个性化，实现客户旅程的无缝、一致互动，并探讨AI在其中的作用。</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 衡量改进 Section -->
+                        <div class="guide-section-card">
+                            <h3>衡量改进</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <strong>核心指标：NPS, CSAT, CES：</strong>
+                                    <span>详细介绍衡量客户体验的三大核心指标，包括其定义、计算方法和应用价值。</span>
+                                </li>
+                                <li>
+                                    <strong>建立反馈闭环：</strong>
+                                    <span>阐述将客户声音转化为实际行动的系统化流程，包括收集、分析、行动和告知客户。</span>
+                                </li>
+                                <li>
+                                    <strong>持续改进的文化：永无止境的旅程：</strong>
+                                    <span>强调将客户体验管理视为持续过程，建立数据驱动、全员参与的改进文化。</span>
+                                </li>
+                                <li>
+                                    <strong>其他关键指标：</strong>
+                                    <span>补充介绍客户流失率、留存率、首次接触解决率等其他重要的客户体验衡量指标。</span>
+                                </li>
+                                <li>
+                                    <strong>客户体验管理工具与平台：</strong>
+                                    <span>列举现代客户体验管理中常用的各类专业工具和平台。</span>
+                                </li>
+                                <li>
+                                    <strong>客户体验投资回报率 (ROI)：</strong>
+                                    <span>探讨如何量化客户体验改进带来的财务收益，并评估其投资回报率。</span>
+                                </li>
+                                <li>
+                                    <strong>客户体验成熟度模型：</strong>
+                                    <span>介绍帮助企业评估和提升其客户体验管理水平的成熟度阶段和方法。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- 核心理念 Tab Content -->
-        <div id="panel-concepts" class="tab-content active">
+        <div id="panel-concepts" class="tab-content">
             <div class="sidebar hidden md:block">
                 <nav>
                     <button class="sidebar-link active" data-section="concepts-traditional">传统服务 vs 现代体验</button>
@@ -1421,6 +1593,7 @@
                                 max: 10,
                                 ticks: {
                                     stepSize: 2,
+                                    // Kept emojis in chart labels as they are not "titles"
                                     callback: function(value) {
                                         const labels = {0: '😠 失望', 5: '😐 平静', 10: '😊 愉悦'};
                                         return labels[value] || '';
@@ -1512,10 +1685,12 @@
                 document.getElementById(`tab-${tabId}`).classList.add('active');
                 document.getElementById(`tab-${tabId}`).setAttribute('aria-selected', 'true');
 
-                // Activate the first sidebar link in the new tab
-                const firstSidebarLink = targetPanel.querySelector('.sidebar-link');
-                if (firstSidebarLink) {
-                    firstSidebarLink.click(); // Simulate click to show its content
+                // For tabs other than 'introduction', activate the first sidebar link
+                if (tabId !== 'introduction') {
+                    const firstSidebarLink = targetPanel.querySelector('.sidebar-link');
+                    if (firstSidebarLink) {
+                        firstSidebarLink.click(); // Simulate click to show its content
+                    }
                 }
             }
 
@@ -1578,8 +1753,8 @@
                 });
             });
 
-            // Initial tab and sidebar section display
-            showTab('concepts'); 
+            // Initial tab and sidebar section display - Changed to 'introduction'
+            showTab('introduction'); 
         });
     </script>
 </body>
